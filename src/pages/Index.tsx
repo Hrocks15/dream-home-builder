@@ -8,16 +8,30 @@ import { BottomNav } from "@/components/BottomNav";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <main className="max-w-lg mx-auto px-6 py-8">
+    <div className="min-h-screen bg-background flex">
+      <BottomNav />
+      <main className="flex-1 px-8 py-6 ml-64">
         <DashboardHeader />
-        <InvestmentCard />
-        <LiteracyProgress />
-        <OpportunityCard />
-        <QuickActions />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <div className="lg:col-span-2">
+            <InvestmentCard />
+          </div>
+          <div>
+            <LiteracyProgress />
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <OpportunityCard />
+        </div>
+
+        <div className="mb-6">
+          <QuickActions />
+        </div>
+
         <RecommendedContent />
       </main>
-      <BottomNav />
     </div>
   );
 };

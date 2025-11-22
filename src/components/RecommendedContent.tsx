@@ -17,18 +17,18 @@ const courses = [
 
 export const RecommendedContent = () => {
   return (
-    <section className="mb-24" aria-label="Recommended courses">
+    <section className="mb-8" aria-label="Recommended courses">
       <h2 className="text-xl font-bold text-foreground mb-4">Recommended For You</h2>
       
-      <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" role="list">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4" role="list">
         {courses.map((course) => (
           <article
             key={course.title}
-            className="flex-shrink-0 w-72 rounded-[2rem] overflow-hidden"
+            className="rounded-[2rem] overflow-hidden hover:border-primary/50 transition-colors"
             role="listitem"
           >
             <div 
-              className="h-40 border border-border overflow-hidden"
+              className="h-48 border border-border overflow-hidden"
             >
               <img 
                 src={course.image} 
@@ -36,7 +36,7 @@ export const RecommendedContent = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="bg-card border border-t-0 border-border rounded-b-[2rem] p-5">
+            <div className="bg-card border border-t-0 border-border rounded-b-[2rem] p-6">
               <h3 className="font-semibold text-foreground mb-1">{course.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{course.subtitle}</p>
               <Button 
