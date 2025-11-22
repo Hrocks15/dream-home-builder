@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/button";
+import investingBasicsImg from "@/assets/investing-basics.jpg";
+import creatingBudgetImg from "@/assets/creating-budget.jpg";
 
 const courses = [
   {
     title: "Investing Basics",
     subtitle: "Stocks 101",
-    gradient: "from-emerald-900/40 to-emerald-700/40",
+    image: investingBasicsImg,
   },
   {
     title: "Creating a Budget",
     subtitle: "Budgeting",
-    gradient: "from-cyan-900/40 to-cyan-700/40",
+    image: creatingBudgetImg,
   },
 ];
 
@@ -26,9 +28,14 @@ export const RecommendedContent = () => {
             role="listitem"
           >
             <div 
-              className={`h-40 bg-gradient-to-br ${course.gradient} border border-border`}
-              aria-hidden="true"
-            />
+              className="h-40 border border-border overflow-hidden"
+            >
+              <img 
+                src={course.image} 
+                alt={`${course.title} course illustration`}
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="bg-card border border-t-0 border-border rounded-b-[2rem] p-5">
               <h3 className="font-semibold text-foreground mb-1">{course.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{course.subtitle}</p>
